@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Streets of Rage 2</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/gif" href="assets/images/max-stand.gif">
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+
+	<audio id="introMusic" src="assets/audio/sega.mp3"></audio>
+	<audio id="selectNoise" src="assets/audio/select.mp3"></audio>
+	<audio id="pSelectMusic" loop="true" src="assets/audio/pselect.mp3"></audio>
+	<audio id="bgMusic" loop="true" src="assets/audio/background.mp3"></audio>
+	<audio id="switchNoise" src="assets/audio/switch.mp3"></audio>
+	<audio id="selectPlayer" src="assets/audio/select2.mp3"></audio>
+	<audio id="kickNoise1" src="assets/audio/kick1.mp3"></audio>
+	<audio id="kickNoise2" src="assets/audio/kick2.mp3"></audio>
+
+	<div id="layout">	<!-- Start - Main container of the game -->
+
+		<div id="loading">	<!-- Start - Loading page -->
+
+			<img class="fullWidth" id="sega" src="assets/images/sega.png" alt="Sega">
+
+			<img class="fullWidth" id="erfaanism" src="assets/images/erfaanism.png" alt="Erfaanism">
+
+		</div>	<!-- End - Loading page -->
+
+		<div id="enter">	<!-- Start - Press play to continue -->
+		
+			<img class="fullWidth" src="assets/images/enter.gif" alt="Press Enter">
+		
+		</div>	<!-- End - Press play to continue -->
+
+		<div class="container-fluid" id="playerSelection">	<!-- Start - The main container for player selection page -->
+
+			<div class="row justify-content-center">	<!-- Start - Select player header -->
+				
+				<div class="col-10">
+				
+					<img class="fullWidth" id="selectPlayer" src="assets/images/selectplayer.png" alt="Select your player">
+
+				</div>
+
+			</div>	<!-- End - Select player header -->
+
+			<div class="row justify-content-center">	<!-- Start - Images and names of characters to choose from -->
+				
+				<div class="col-8">
+
+					<div class="row justify-content-center">
+
+						<div class="col-3">
+						
+							<img class="fullWidth" src="assets/images/max-name.png" alt="Max">
+							
+							<img class="fullWidth playerImages" id="max" src="assets/images/max.jpg" alt="Max">
+							
+						</div>
+
+						<div class="col-3">
+						
+							<img class="fullWidth" src="assets/images/axel-name.png" alt="Axel">
+
+							<img class="fullWidth playerImages" id="axel" src="assets/images/axel.jpg" alt="Axel">
+
+						
+						</div>
+
+						<div class="col-3">
+
+							<img class="fullWidth" src="assets/images/blaze-name.png" alt="Blaze">
+
+							<img class="fullWidth playerImages" id="blaze" src="assets/images/blaze.jpg" alt="Blaze">
+						
+						</div>
+
+						<div class="col-3">
+
+							<img class="fullWidth" src="assets/images/skate-name.png" alt="Skate">
+						
+							<img class="fullWidth playerImages" id="skate" src="assets/images/skate.jpg" alt="Skate">
+
+
+						</div>
+					
+					</div>
+
+				</div>
+				
+			</div>	<!-- End - Images and names of characters to choose from -->
+				
+
+			<div class="row justify-content-center" id="playerSelected">	<!-- Start - Selected player's and animation and information -->
+				
+				<div class="col-9">
+
+					<div class="row justify-content-center">
+
+						<div class="col-3">
+						
+							<img class="fullWidth" id="onPlayer1Name" src="assets/images/max-gold.png" alt="Max">
+								
+							<img class="fullWidth" id="onPlayer1Image" src="assets/images/max-stand.gif" alt="Max">
+
+						</div>
+						
+
+						<div class="col-6">
+							
+							<div class="row justify-content-center mt-4">
+								
+								<div class="col-3">
+
+									<img class="fullWidth" id="powerStar-1" src="assets/images/star3.png" alt="Star">
+
+									<img class="fullWidth" id="techniqueStar-1" src="assets/images/star3.png" alt="Star">
+									
+									<img class="fullWidth" id="speedStar-1" src="assets/images/star3.png" alt="Star">
+									
+									<img class="fullWidth" id="jumpStar-1" src="assets/images/star3.png" alt="Star">
+									
+									<img class="fullWidth" id="staminaStar-1" src="assets/images/star3.png" alt="Star">
+								
+								</div>
+
+								<div class="col-6">
+
+									<img class="fullWidth" id="power" src="assets/images/power.png" alt="Power">
+
+									<img class="fullWidth" id="technique" src="assets/images/technique.png" alt="Technique">
+
+									<img class="fullWidth" id="speed" src="assets/images/speed.png" alt="Speed">
+
+									<img class="fullWidth" id="jump" src="assets/images/jump.png" alt="Jump">
+
+									<img class="fullWidth" id="stamina" src="assets/images/stamina.png" alt="Stamina">
+								
+								</div>
+
+								<div class="col-3">
+
+									<img class="fullWidth" id="powerStar-2" src="assets/images/star3.png" alt="Star">
+									
+									<img class="fullWidth" id="techniqueStar-2" src="assets/images/star3.png" alt="Star">
+									
+									<img class="fullWidth" id="speedStar-2" src="assets/images/star3.png" alt="Star">
+									
+									<img class="fullWidth" id="jumpStar-2" src="assets/images/star3.png" alt="Star">
+									
+									<img class="fullWidth" id="staminaStar-2" src="assets/images/star3.png" alt="Star">
+
+								</div>				
+
+							</div>
+
+						</div>
+
+						<div class="col-3">
+					
+							<img class="fullWidth" id="onPlayer2Name" src="assets/images/max-gold.png" alt="Max">
+								
+							<img class="fullWidth" id="onPlayer2Image" src="assets/images/max-stand.gif" alt="Max">
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>	<!-- End - Selected player's and animation and information -->
+		
+		</div>	<!-- End - The main container for player selection page -->
+
+		<div id="stage">
+			
+			<img id="stageImage" class="fullWidth" src="assets/images/stage1.png" alt="Stage 1">
+
+		</div>
+
+		<div id="battleScene">
+
+			<div id="instruction">
+				
+				<span id="instructionText">Press Enter to Attack</span>
+
+			</div>
+			
+			<div id="p1Stats">
+
+				<img id="statName1" src="assets/images/max-name.png" alt="Max">
+
+				<img id="statImage1" id="max" src="assets/images/max.jpg" alt="Max">
+
+				<div id="hpBar1Container">
+					
+				</div>
+
+				<div id="hpBar1">
+					
+				</div>
+
+				<div id="stats1">
+					<span class="stats" id="hp1"></span>
+					<span class="stats" id="ap1"></span>
+					<span class="stats" id="cap1"></span>
+				</div>
+
+			</div>
+
+			<div id="timer">
+				
+				<span id="timerTitle">TIME</span>
+
+				<span id="timerCounter">99</span>
+
+			</div>
+
+			<div id="p2Stats">
+				
+				<img id="statName2" src="assets/images/max-name.png" alt="Max">
+
+				<img id="statImage2" id="max" src="assets/images/max.jpg" alt="Max">
+
+				<div id="hpBar2Container">
+					
+				</div>
+
+				<div id="hpBar2">
+					
+				</div>
+
+				<div id="stats2" class="stats">
+					<span class="stats" id="hp2"></span>
+					<span class="stats" id="ap2"></span>
+					<span class="stats" id="cap2"></span>
+				</div>
+
+			</div>
+
+			<img id="p1Fighter" src="assets/images/max-stand.gif" alt="Fighter 1">
+
+			<img id="p2Fighter" src="assets/images/max-stand.gif" alt="Fighter 2">
+
+			<img id="fgImage" src="assets/images/foreground.png" alt="Foreground">
+
+			<div id="p1Wins">
+				
+				<img class="fullWidth" src="assets/images/player1.png" alt="Player 1 Wins">
+
+			</div>
+
+			<div id="p2Wins">
+				
+				<img class="fullWidth" src="assets/images/player2.png" alt="Player 2 Wins">
+				
+			</div>
+
+		</div>
+	
+	</div>
+
+</body>
+</html>
