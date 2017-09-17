@@ -103,7 +103,7 @@ $(document).ready(function() {
 		}
 	}
 
-	$.preloadImages("axel-badge.png", "axel-beaten.gif", "axel-gold.png", "axel-kick.gif", "axel-name.png", "axel-p1.jpg", "axel-p2.jpg", "axel-stand.gif", "axel-walk.gif", "axel.jpg", "background.gif", "blaze-badge.png", "blaze-beaten.gif", "blaze-gold.png", "blaze-kick.gif", "blaze-name.png", "blaze-p1.jpg", "blaze-p2.jpg", "blaze-stand.gif", "blaze-walk.gif", "blaze.jpg", "enter.gif", "erfaanism.png", "explosion.gif", "foreground.png", "jump.png", "max-badge.png", "max-beaten.gif", "max-gold.png", "max-kick.gif", "max-name.png", "max-p1.jpg", "max-p2.jpg", "max-stand.gif", "max-walk.gif", "max.jpg", "power.png", "sega.png", "selectplayer.png", "skate-badge.png", "skate-beaten.gif", "skate-gold.png", "skate-kick.gif", "skate-name.png", "skate-p1.jpg", "skate-p2.jpg", "skate-stand.gif", "skate-walk.gif", "skate.jpg", "speed.png", "stage1.png", "stamina.png", "star1.png", "star2.png", "star3.png", "technique.png");
+	$.preloadImages("axel-badge.png", "axel-beaten.gif", "axel-gold.png", "axel-kick.gif", "axel-name.png", "axel-p1.jpg", "axel-p2.jpg", "axel-p3.jpg", "axel-p4.jpg", "axel-stand.gif", "axel-walk.gif", "axel.jpg", "background.gif", "blaze-badge.png", "blaze-beaten.gif", "blaze-gold.png", "blaze-kick.gif", "blaze-name.png", "blaze-p1.jpg", "blaze-p2.jpg", "blaze-p3.jpg", "blaze-p4.jpg", "blaze-stand.gif", "blaze-walk.gif", "blaze.jpg", "enter.gif", "erfaanism.png", "explosion.gif", "foreground.png", "gameover.png", "jump.png", "max-badge.png", "max-beaten.gif", "max-gold.png", "max-kick.gif", "max-name.png", "max-p1.jpg", "max-p2.jpg", "max-p3.jpg", "max-p4.jpg", "max-stand.gif", "max-walk.gif", "max.jpg", "player1.png", "player2.png", "power.png", "sega.png", "selectplayer.png", "skate-badge.png", "skate-beaten.gif", "skate-gold.png", "skate-kick.gif", "skate-name.png", "skate-p1.jpg", "skate-p2.jpg", "skate-p3.jpg", "skate-p4.jpg", "skate-stand.gif", "skate-walk.gif", "skate.jpg", "speed.png", "stage1.png", "stage2.png", "stage3.png", "stamina.png", "star1.png", "star2.png", "star3.png", "technique.png");
 
 	setTimeout(function(){
 		$("#loading").css("display", "block");
@@ -236,12 +236,6 @@ $(document).ready(function() {
 		$("#statName2").attr("src", objP2Selected.badgeName);
 		$("#statImage1").attr("src", objP1Selected.profilePic);
 		$("#statImage2").attr("src", objP2Selected.profilePic);
-		$("#hp1").text(objP1Selected.currentHp);
-		$("#hp2").text(objP2Selected.currentHp);
-		$("#ap1").text(objP1Selected.currentAp);
-		$("#ap2").text(objP2Selected.ap);
-		$("#cap1").text(objP1Selected.cap);
-		$("#cap2").text(objP2Selected.cap);
 		bolStageLoaded = true;
 		var timer = setInterval(function(){
 			intTimerCounter--;
@@ -300,18 +294,13 @@ $(document).ready(function() {
 				objP2Selected.currentHp -= objP1Selected.currentAp;
 				if (objP2Selected.currentHp > 0) {
 					damageP2 = ((objP1Selected.currentAp * 33)/objP2Selected.hp).toFixed(2);
-					console.log(damageP2);
 					hpBar2 -= damageP2;
-					console.log(hpBar2.toFixed(2));
 					$("#hpBar2").css("width", "calc(" + hpBar2 + "vw - 4px");
 				}
 				else {
 					$("#hpBar2").css("width", 0);
 					p1Wins();
 				}
-				$("#hp2").prepend(objP2Selected.currentHp + " ");
-				$("#ap2").prepend(objP2Selected.ap + " ");
-				$("#cap2").prepend(objP2Selected.cap + " ");
 			}, 150);
 			setTimeout(function () {
 				$("#p1Fighter").attr("src", objP1Selected.walkAnimation);
@@ -322,7 +311,6 @@ $(document).ready(function() {
 			}, 800);
 			setTimeout(function () {
 				$("#p1Fighter").attr("src", objP1Selected.standAnimation);
-				console.log(bolRoundOver);
 			}, 1600);
 		}, 800);
 
@@ -339,18 +327,13 @@ $(document).ready(function() {
 						objP1Selected.currentAp += objP1Selected.ap;
 					if (objP1Selected.currentHp > 0) {
 						damageP1 = ((objP2Selected.cap * 33)/objP1Selected.hp).toFixed(2);
-						console.log(damageP1);
 						hpBar1 -= damageP1;
-						console.log(hpBar1.toFixed(2));
 						$("#hpBar1").css("width", "calc(" + hpBar1 + "vw - 4px");
 					}
 					else {
 						$("#hpBar1").css("width", 0);
 						p2Wins();
 					}
-						$("#hp1").append(" " + objP1Selected.currentHp);
-						$("#ap1").append(" " + objP1Selected.currentAp);
-						$("#cap1").append(" " + objP1Selected.cap);
 					}, 100);
 					setTimeout(function () {
 						$("#p2Fighter").attr("src", objP2Selected.walkAnimation);
@@ -396,7 +379,6 @@ $(document).ready(function() {
 			bolP2Selection = true;
 			player2Selector(arrAvailableP2[intP2Selector]);
 		}
-
 		else if (bolP2Selection && !bolP1Selection && !bolBattleBegan && event.keyCode === 39 && intP2Selector <= 1) {
 			intP2Selector++;
 			player2Selector(arrAvailableP2[intP2Selector]);
@@ -418,7 +400,6 @@ $(document).ready(function() {
 			beginFight();
 			bolBattleBegan = true;
 		}
-
 		else if (!bolUnderAttack && !bolRoundOver && bolStageLoaded && !bolP1Selection && !bolP2Selection && bolBattleBegan && event.keyCode === 13) {
 			attack();
 		}		
