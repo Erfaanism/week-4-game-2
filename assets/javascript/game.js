@@ -300,18 +300,13 @@ $(document).ready(function() {
 				objP2Selected.currentHp -= objP1Selected.currentAp;
 				if (objP2Selected.currentHp > 0) {
 					damageP2 = ((objP1Selected.currentAp * 33)/objP2Selected.hp).toFixed(2);
-					console.log(damageP2);
 					hpBar2 -= damageP2;
-					console.log(hpBar2.toFixed(2));
 					$("#hpBar2").css("width", "calc(" + hpBar2 + "vw - 4px");
 				}
 				else {
 					$("#hpBar2").css("width", 0);
 					p1Wins();
 				}
-				$("#hp2").prepend(objP2Selected.currentHp + " ");
-				$("#ap2").prepend(objP2Selected.ap + " ");
-				$("#cap2").prepend(objP2Selected.cap + " ");
 			}, 150);
 			setTimeout(function () {
 				$("#p1Fighter").attr("src", objP1Selected.walkAnimation);
@@ -322,7 +317,6 @@ $(document).ready(function() {
 			}, 800);
 			setTimeout(function () {
 				$("#p1Fighter").attr("src", objP1Selected.standAnimation);
-				console.log(bolRoundOver);
 			}, 1600);
 		}, 800);
 
@@ -339,18 +333,13 @@ $(document).ready(function() {
 						objP1Selected.currentAp += objP1Selected.ap;
 					if (objP1Selected.currentHp > 0) {
 						damageP1 = ((objP2Selected.cap * 33)/objP1Selected.hp).toFixed(2);
-						console.log(damageP1);
 						hpBar1 -= damageP1;
-						console.log(hpBar1.toFixed(2));
 						$("#hpBar1").css("width", "calc(" + hpBar1 + "vw - 4px");
 					}
 					else {
 						$("#hpBar1").css("width", 0);
 						p2Wins();
 					}
-						$("#hp1").append(" " + objP1Selected.currentHp);
-						$("#ap1").append(" " + objP1Selected.currentAp);
-						$("#cap1").append(" " + objP1Selected.cap);
 					}, 100);
 					setTimeout(function () {
 						$("#p2Fighter").attr("src", objP2Selected.walkAnimation);
