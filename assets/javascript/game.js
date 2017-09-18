@@ -66,7 +66,7 @@ $(document).ready(function() {
 		walkAnimation: "assets/images/skate-walk.gif",
 		kickAnimation: "assets/images/skate-kick.gif",
 		hp: 340,
-		currentHp: 400,
+		currentHp: 340,
 		ap: 16,
 		currentAp: 16, 
 		cap: 60
