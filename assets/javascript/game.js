@@ -274,6 +274,7 @@ $(document).ready(function() {
 	}
 
 	function p2Wins () {
+		bolRoundOver = true;
 		$("#p2Wins").css("display", "block");
 		$("#p2Wins").animate({"left": "50vw", "top": "50vw", "margin-left": "-25vw", "margin-top": "-25vw"}, {duration: 1000});
 		setTimeout(function() {
